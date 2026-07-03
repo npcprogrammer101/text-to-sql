@@ -1,0 +1,26 @@
+[project]
+name = "olist-txt2sql"
+version = "0.1.0"
+description = "Multi-agent text-to-SQL over the Olist e-commerce dataset, with an AST guardrail and read-only execution."
+requires-python = ">=3.10"
+dependencies = [
+    "langgraph>=0.2",
+    "sqlglot>=25",
+    "sqlalchemy>=2.0",
+    "mysql-connector-python>=9.0",
+    "rapidfuzz>=3.0",
+    "requests>=2.31",
+    "pandas>=2.0",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+data = ["kagglehub>=0.3"]
+dev = ["pytest>=8.0"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
